@@ -1,0 +1,118 @@
+As a Product Data Scientist at Instagram, I would measure the success of the Instagram TV product using a combination of metrics, including:
+
+Engagement: This includes metrics such as views, likes, comments, and shares. Engagement rate is a particularly important metric, as it shows the percentage of viewers who interacted with a video
+
+```python
+import pandas as pd
+
+# Load the data
+data = pd.read_csv('igtv_engagement.csv')
+
+# Calculate the engagement rate
+engagement_rate = (data['likes'] + data['comments']) / data['views']
+
+# Print the engagement rate
+print('Engagement rate:', engagement_rate)
+
+```
+
+Retention: This metric measures how many viewers watched a video from start to finish. A high retention rate indicates that viewers are interested in the content and watching it all the way through.
+
+
+```python
+import pandas as pd
+import numpy as np
+
+# Load the data
+data = pd.read_csv('igtv_retention.csv')
+
+# Calculate the retention rate
+retention_rate = np.sum(data['retention_time'] >= data['video_length']) / len(data)
+
+# Print the retention rate
+print('Retention rate:', retention_rate)
+
+``
+
+Growth: This metric measures how many new users are watching IGTV videos and how often they are returning to watch more.
+
+```python
+import pandas as pd
+import numpy as np
+
+# Load the data
+data = pd.read_csv('igtv_growth.csv')
+
+# Calculate the growth rate
+growth_rate = (data['new_users'] + data['returning_users']) / data['total_users']
+
+# Print the growth rate
+print('Growth rate:', growth_rate)
+
+```
+
+Audience: This metric measures the demographics and interests of IGTV viewers. Understanding the audience allows Instagram to create content and features that are relevant and engaging.
+
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the data
+data = pd.read_csv('igtv_audience.csv')
+
+# Create a bar chart of the audience demographics
+plt.bar(data['demographic'], data['count'])
+plt.xlabel('Demographic')
+plt.ylabel('Count')
+plt.title('Instagram TV Audience Demographics')
+plt.show()
+
+```
+
+In addition to these core metrics, I would also track a number of secondary metrics, such as:
+
+Average video length: This metric can help Instagram understand how long viewers are willing to watch IGTV videos.
+Time of day: This metric can help Instagram understand when viewers are most likely to watch IGTV videos.
+Video type: This metric can help Instagram understand what types of videos viewers are most interested in.
+Hashtags: This metric can help Instagram understand what topics viewers are interested in watching on IGTV.
+
+```python
+import pandas as pd
+import numpy as np
+
+# Load the data
+data = pd.read_csv('igtv_secondary_metrics.csv')
+
+# Calculate the average video length
+average_video_length = np.mean(data['video_length'])
+
+# Print the average video length
+print('Average video length:', average_video_length)
+
+# Calculate the time of day with the most viewers
+time_of_day_with_most_viewers = data['time_of_day'].mode()
+
+# Print the time of day with the most viewers
+print('Time of day with the most viewers:', time_of_day_with_most_viewers)
+
+# Calculate the most popular video type
+most_popular_video_type = data['video_type'].mode()
+
+# Print the most popular video type
+print('Most popular video type:', most_popular_video_type)
+
+# Calculate the most popular hashtags
+most_popular_hashtags = data['hashtags'].value_counts().index[0:10]
+
+# Print the most popular hashtags
+print('Most popular hashtags:', most_popular_hashtags)
+
+```
+
+By tracking these metrics, I would be able to get a holistic view of how IGTV is performing and identify areas where improvement is needed. For example, if I see that engagement rates are low for a certain type of video, I could recommend that Instagram produce less of that type of content. Or, if I see that viewers are dropping off halfway through a video, I could recommend that Instagram produce shorter videos or add more engaging content to the beginning of videos.
+
+Ultimately, the goal of measuring the success of IGTV is to help Instagram create a product that people love to use. By understanding how people are interacting with IGTV, Instagram can make informed decisions about how to improve the product and make it more engaging for users.
+
+
+
